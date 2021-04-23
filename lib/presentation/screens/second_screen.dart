@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:multiply_by_five_bloc/logic/cubit/multiply_cubit.dart';
-import 'package:multiply_by_five_bloc/presentation/screens/second_screen.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key key, this.title, this.color}) : super(key: key);
+class SecondScreen extends StatefulWidget {
+  const SecondScreen({Key key, this.title, this.color}) : super(key: key);
 
   final String title;
   final Color color;
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _SecondScreenState createState() => _SecondScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _SecondScreenState extends State<SecondScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,16 +75,9 @@ class _HomeScreenState extends State<HomeScreen> {
             MaterialButton(
               color: widget.color,
               onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                      builder: (context) => SecondScreen(
-                            title: 'Second Screen',
-                            color: Colors.greenAccent,
-                      ),
-                    ),
-                );
+                Navigator.of(context).pop();
               },
-              child: Text('Go to 2nd screen'),
+              child: Text('Go back to 1st screen'),
             ),
           ],
         ),
