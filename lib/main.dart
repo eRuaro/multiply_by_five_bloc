@@ -2,26 +2,46 @@ import 'package:flutter/material.dart';
 import 'package:multiply_by_five_bloc/logic/cubit/multiply_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:multiply_by_five_bloc/presentation/screens/home_screen.dart';
+import 'package:multiply_by_five_bloc/presentation/screens/second_screen.dart';
+import 'package:multiply_by_five_bloc/presentation/screens/third_screen.dart';
+
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
+  final MultiplyCubit _multiplyCubit = MultiplyCubit();
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => MultiplyCubit(),
       child: MaterialApp(
-        home: HomeScreen(
-          color: Colors.red,
-          title: 'Multiply Counter App',
-          
-        ),
-        
+        routes: {
+          '/': (context) => BlocProvider.value(
+            value: _multiplyCubit,
+                      child: HomeScreen(
+                  title: 'Home Screen',
+                  color: Colors.green,
+                ),
+          ),
+          '2nd': (context) => BlocProvider.value(
+            value: _multiplyCubit,
+                      child: SecondScreen(
+                  title: 'Second Screen',
+                  color: Colors.orange,
+                ),
+          ),
+          '3rd': (context) => BlocProvider.value(
+            value: _multiplyCubit,
+                      child: ThirdScreen(
+                  title: 'Third Screen',
+                  color: Colors.cyan,
+                ),
+          ),
+        },
       ),
     );
   }
 }
-
-
