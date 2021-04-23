@@ -16,7 +16,9 @@ class MyApp extends StatelessWidget {
         home: HomeScreen(
           color: Colors.red,
           title: 'Multiply Counter App',
+          
         ),
+        
       ),
     );
   }
