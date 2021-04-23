@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:multiply_by_five_bloc/cubit/multiply_cubit.dart';
+import 'package:multiply_by_five_bloc/logic/cubit/multiply_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => MultiplyCubit(),
       child: MaterialApp(
-        home: HomePage(
+        home: HomeScreen(
           title: 'Multiply Counter App',
         ),
       ),
@@ -21,16 +21,16 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key key, this.title}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
