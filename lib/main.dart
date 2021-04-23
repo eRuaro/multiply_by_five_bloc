@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       create: (context) => MultiplyCubit(),
       child: MaterialApp(
         home: HomeScreen(
+          color: Colors.red,
           title: 'Multiply Counter App',
         ),
       ),

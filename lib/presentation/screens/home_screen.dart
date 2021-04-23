@@ -3,9 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:multiply_by_five_bloc/logic/cubit/multiply_cubit.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key key, this.title}) : super(key: key);
+  const HomeScreen({Key key, this.title, this.color}) : super(key: key);
 
   final String title;
+  final Color color;
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -67,6 +68,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Text('*'),
                 ),
               ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            MaterialButton(
+              color: widget.color,
+              onPressed: () {},
+              child: Text('Go to 2nd screen'),
             ),
           ],
         ),
