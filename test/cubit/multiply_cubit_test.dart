@@ -1,6 +1,6 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:multiply_by_five_bloc/cubit/multiply_cubit.dart';
+import 'package:multiply_by_five_bloc/logic/cubit/multiply_cubit.dart';
 // import 'package:multiply_by_five_bloc/cubit/multiply_state.dart';
 
 void main () {
