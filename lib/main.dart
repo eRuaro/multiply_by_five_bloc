@@ -9,10 +9,16 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   // This widget is the root of your application.
 
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   final MultiplyCubit _multiplyCubit = MultiplyCubit();
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -20,28 +26,34 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         routes: {
           '/': (context) => BlocProvider.value(
-            value: _multiplyCubit,
-                      child: HomeScreen(
+                value: _multiplyCubit,
+                child: HomeScreen(
                   title: 'Home Screen',
                   color: Colors.green,
                 ),
-          ),
+              ),
           '2nd': (context) => BlocProvider.value(
-            value: _multiplyCubit,
-                      child: SecondScreen(
+                value: _multiplyCubit,
+                child: SecondScreen(
                   title: 'Second Screen',
                   color: Colors.orange,
                 ),
-          ),
+              ),
           '3rd': (context) => BlocProvider.value(
-            value: _multiplyCubit,
-                      child: ThirdScreen(
+                value: _multiplyCubit,
+                child: ThirdScreen(
                   title: 'Third Screen',
                   color: Colors.cyan,
                 ),
-          ),
+              ),
         },
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _multiplyCubit.close();
+    super.dispose();
   }
 }

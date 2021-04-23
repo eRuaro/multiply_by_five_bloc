@@ -70,25 +70,45 @@ class _ThirdScreenState extends State<ThirdScreen> {
                 ),
               ],
             ),
+            // SizedBox(
+            //   height: 20,
+            // ),
+            // MaterialButton(
+            //   color: widget.color,
+            //   onPressed: () {
+            //     // Navigator.of(context).push(
+            //     //   MaterialPageRoute(
+            //     //       builder: (_) => BlocProvider.value(
+            //     //               value: BlocProvider.of<MultiplyCubit>(context),
+            //     //               child: SecondScreen(
+            //     //               title: 'Second Screen',
+            //     //               color: Colors.greenAccent,
+            //     //             ),
+            //     //       ),
+            //     //     ),
+            //     // );
+            //   },
+            //   child: Text('Go to 2nd screen'),
+            // ),
             SizedBox(
               height: 20,
             ),
             MaterialButton(
               color: widget.color,
               onPressed: () {
-                // Navigator.of(context).push(
-                //   MaterialPageRoute(
-                //       builder: (_) => BlocProvider.value(
-                //               value: BlocProvider.of<MultiplyCubit>(context),
-                //               child: SecondScreen(
-                //               title: 'Second Screen',
-                //               color: Colors.greenAccent,
-                //             ),
-                //       ),
-                //     ),
-                // );
+                Navigator.of(context).pushNamed('/');
               },
-              child: Text('Go to 2nd screen'),
+              child: Text('Go to Home screen'),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            MaterialButton(
+              color: widget.color,
+              onPressed: () {
+                Navigator.of(context).pushNamed('2nd');
+              },
+              child: Text('Go to Second screen'),
             ),
           ],
         ),

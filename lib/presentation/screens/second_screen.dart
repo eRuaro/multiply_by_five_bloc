@@ -69,15 +69,35 @@ class _SecondScreenState extends State<SecondScreen> {
                 ),
               ],
             ),
+            // SizedBox(
+            //   height: 20,
+            // ),
+            // MaterialButton(
+            //   color: widget.color,
+            //   onPressed: () {
+            //     Navigator.of(context).pop();
+            //   },
+            //   child: Text('Go back to 1st screen'),
+            // ),
             SizedBox(
               height: 20,
             ),
             MaterialButton(
               color: widget.color,
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.of(context).pushNamed('/');
               },
-              child: Text('Go back to 1st screen'),
+              child: Text('Go to Home screen'),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            MaterialButton(
+              color: widget.color,
+              onPressed: () {
+                Navigator.of(context).pushNamed('3rd');
+              },
+              child: Text('Go to third screen'),
             ),
           ],
         ),
