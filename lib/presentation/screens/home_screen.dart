@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:multiply_by_five_bloc/logic/cubit/multiply_cubit.dart';
-import 'package:multiply_by_five_bloc/presentation/screens/second_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key key, this.title, this.color}) : super(key: key);
