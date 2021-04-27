@@ -15,15 +15,19 @@ class InternetCubit extends Cubit<InternetState> {
 
   InternetCubit({@required this.connectivity}) : super(InternetLoading()) {
     connectivityStreamSubcription =
-        connectivity.onConnectivityChanged.listen((connectivityResult) {
-      if (connectivityResult == ConnectivityResult.wifi) {
-        emitInternetConnected(ConnectionType.Wifi);
-      } else if (connectivityResult == ConnectivityResult.mobile) {
-        emitInternetConnected(ConnectionType.Mobile);
-      } else if (connectivityResult == ConnectivityResult.none) {
-        emitInternetDisconnected();
-      }
-    });
+        monitorInternetConnection();
+  }
+
+  StreamSubscription<ConnectivityResult> monitorInternetConnection() {
+    return connectivity.onConnectivityChanged.listen((connectivityResult) {
+    if (connectivityResult == ConnectivityResult.wifi) {
+      emitInternetConnected(ConnectionType.Wifi);
+    } else if (connectivityResult == ConnectivityResult.mobile) {
+      emitInternetConnected(ConnectionType.Mobile);
+    } else if (connectivityResult == ConnectivityResult.none) {
+      emitInternetDisconnected();
+    }
+  });
   }
 
   void emitInternetConnected(ConnectionType _connectionType) {
